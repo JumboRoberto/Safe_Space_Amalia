@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danna's Safe Space 🤍 | Refugio de Paz & Juegos</title>
+    <!-- Tipografía Premium de Google (Outfit & Poppins) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Lienzo de Partículas Neón Interactivas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Luces de Fondo Dinámicas -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <main class="dashboard">
+        <!-- Barra de Estado Superior / Widgets Rápidos -->
+        <div class="top-widget-bar">
+            <div class="widget-chip">
+                <span class="status-dot pulsing"></span>
+                <span>Refugio Activo 🤍</span>
+            </div>
+            <div class="widget-chip gold-chip">
+                <i class="fas fa-bolt"></i>
+                <span>Dopamina: <b>+100%</b></span>
+            </div>
+            <div class="widget-chip cyan-chip">
+                <i class="fas fa-spa"></i>
+                <span>Paz & Serenidad</span>
+            </div>
+        </div>
+
+        <header class="glass-header hero-header">
+            <div class="hero-badge">Refugio Exclusivo para Amalia ✨</div>
+            <h1 id="dynamic-greeting" class="hero-title"></h1>
+            <p id="dynamic-subtitle" class="hero-subtitle">Iniciando protocolo de abrazos virtuales y calma profunda...
+            </p>
+        </header>
+
+        <!-- Grilla de Módulos de Lujo -->
+        <section class="modules-grid luxury-grid">
+            <!-- Módulo 1: Pausa y Respira -->
+            <div class="card luxury-card hover-glow" onclick="startBreathing()">
+                <div class="card-badge badge-purple">SENSORIAL 🧘‍♀️</div>
+                <div class="card-icon-wrapper icon-wind">
+                    <i class="fas fa-wind icon"></i>
+                </div>
+                <h3>Pausa y Respira</h3>
+                <p>Sincroniza tu respiración con ritmos guiados para liberar toda la tensión acumulada.</p>
+                <div class="card-action">Entrar <i class="fas fa-arrow-right"></i></div>
+            </div>
+
+            <!-- Módulo 2: Botiquín de Emergencia -->
+            <div class="card luxury-card hover-glow" onclick="generateCompliment()">
+                <div class="card-badge badge-pink">AMOR PROPIO 💖</div>
+                <div class="card-icon-wrapper icon-heart">
+                    <i class="fas fa-heart icon"></i>
+                </div>
+                <h3>Botiquín de Emergencia</h3>
+                <p>Dosis instantáneas de motivación y recordatorios de lo increíble e inteligente que eres.</p>
+                <div class="card-action">Abrir <i class="fas fa-arrow-right"></i></div>
+            </div>
+
+            <!-- Módulo 3: Distracción Cognitiva -->
+            <div class="card luxury-card hover-glow" onclick="openGames()">
+                <div class="card-badge badge-gold">ARCADE & COMBOS 🔥</div>
+                <div class="card-icon-wrapper icon-gamepad">
+                    <i class="fas fa-gamepad icon"></i>
+                </div>
+                <h3>Distracción Cognitiva</h3>
+                <p>Retos visuales adictivos con combos musicales, poder-ups y mucha diversión.</p>
+                <div class="card-action">Jugar <i class="fas fa-arrow-right"></i></div>
+            </div>
+
+            <!-- Módulo 4: Nuestra Bóveda -->
+            <div class="card luxury-card hover-glow" onclick="showMemories()">
+                <div class="card-badge badge-cyan">RECUERDOS 📸</div>
+                <div class="card-icon-wrapper icon-camera">
+                    <i class="fas fa-camera-retro icon"></i>
+                </div>
+                <h3>Nuestra Bóveda</h3>
+                <p>Colección fotográfica de nuestros mejores momentos y razones de por qué somos equipo.</p>
+                <div class="card-action">Ver Fotos <i class="fas fa-arrow-right"></i></div>
+            </div>
+        </section>
+
+        <!-- Reproductor de Música Premium con Melodía Ambiental -->
+        <div class="music-player luxury-music-player">
+            <div class="track-info">
+                <i class="fas fa-compact-disc rotating" id="disc-icon"></i>
+                <div class="track-text">
+                    <span class="track-title" id="music-title-text">Música de Calma & Relax 🎶</span>
+                    <span class="track-sub">Dale Play a esto &rarr;</span>
+                </div>
+                <!-- Animación del Ecualizador -->
+                <div class="equalizer" id="equalizer-bars">
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                </div>
+            </div>
+            <button id="play-btn" class="play-pulse-btn" onclick="togglePlay()"><i class="fas fa-play"></i></button>
+            <audio id="bg-music" src="assets/audio/cancion.mp3" loop></audio>
+        </div>
+
+        <!-- Pantalla Modal de Módulos -->
+        <div id="app-modal" class="modal hidden">
+            <div class="modal-content glass-card">
+                <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/game.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
